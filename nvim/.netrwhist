@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/ms/tank/Programming/sound'
+let g:netrw_dirhist_1='/home/ms/tank/Programming/sound/src'
+let g:netrw_dirhist_0='/home/ms/tank/Programming/sound'
+let g:netrw_dirhist_9='/home/ms/tank/Programming/sound/src'
+let g:netrw_dirhist_8='/home/ms/tank/Programming/sound'
+let g:netrw_dirhist_7='/home/ms/.config/polybar'
+let g:netrw_dirhist_6='/home/ms/tank/Programming/ragit/src'
+let g:netrw_dirhist_5='/home/ms/tank/Programming/ragit'
+let g:netrw_dirhist_4='/home/ms/tank/Programming/ragit/src'
+let g:netrw_dirhist_3='/home/ms/tank/Programming/ragit'
