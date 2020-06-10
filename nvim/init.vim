@@ -28,6 +28,7 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-line'
 Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'dhruvasagar/vim-table-mode'
 call plug#end()
 
 if has('nvim')
@@ -242,3 +243,7 @@ nnoremap <c-x> <c-v>
 
 " nvim colourizer
 lua require'colorizer'.setup()
+
+" ResT compatible tables
+let g:table_mode_corner_corner='+'
+let g:table_mode_header_fillchar='='
