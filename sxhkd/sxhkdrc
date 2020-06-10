@@ -130,5 +130,5 @@ super + @c
 shift + @Print
 	maim --select /home/$USER/Pictures/(date).png
 
-super + @l
+ctrl + alt + @l
 	i3lock
