@@ -1,5 +1,8 @@
 #! /bin/sh
 
+# Uniform Cursor
+xsetroot -cursor_name left_ptr
+
 killall compton
 killall sxhkd
 nm-applet &
