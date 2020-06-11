@@ -12,6 +12,7 @@ alias xc "nvim ~/.xmonad/xmonad.hs"
 alias bsc "nvim ~/.config/bspwm/bspwmrc"
 alias sxc "nvim ~/.config/sxhkd/sxhkdrc"
 alias ac "nvim ~/.config/alacritty/alacritty.yml"
+alias g "lazygit"
 set -U fish_greeting ""
 set -x EDITIOR nvim
 set --erase fish_greeting
