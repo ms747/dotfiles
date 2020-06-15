@@ -1,0 +1,8 @@
+---
+syntax : rust
+tags : [ rust ]
+---
+
+// Convert iter to array
+let array = iter.collect::<Vec<_>>();
+let array:Vec<_> = iter.collect();
