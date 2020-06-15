@@ -29,6 +29,7 @@ Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-line'
 Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'dhruvasagar/vim-table-mode'
+Plug '/home/ms/tank/Programming/vimsnitch'
 call plug#end()
 
 if has('nvim')
