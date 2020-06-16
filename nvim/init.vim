@@ -142,7 +142,7 @@ set number
 set diffopt+=iwhite
 set diffopt+=algorithm:patience
 set diffopt+=indent-heuristic
-set colorcolumn=80
+" set colorcolumn=80
 set showcmd
 set mouse=a
 set shortmess+=c
@@ -156,7 +156,7 @@ set listchars=nbsp:¬,extends:»,precedes:«,trail:•
 
 " Keyboard shortcuts
 nnoremap ; :
-nnoremap ' ;
+nnoremap : ;
 
 " Jump to start and end of line using the home row keys
 map H ^
