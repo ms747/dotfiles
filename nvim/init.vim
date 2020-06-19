@@ -155,8 +155,8 @@ set listchars=nbsp:¬,extends:»,precedes:«,trail:•
 
 
 " Keyboard shortcuts
-nnoremap ; :
-nnoremap : ;
+" nnoremap ; :
+" nnoremap : ;
 
 " Jump to start and end of line using the home row keys
 map H ^
