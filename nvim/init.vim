@@ -29,7 +29,7 @@ Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-line'
 Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'dhruvasagar/vim-table-mode'
-Plug '/home/ms/tank/Programming/vimsnitch'
+" Plug '/home/ms/tank/Programming/vimsnitch'
 call plug#end()
 
 if has('nvim')
@@ -208,8 +208,9 @@ vmap <A-j> ]egv
 inoremap <A-space> <Esc>
 
 " Rust compile
-nnoremap <leader>b :Cargo run --quiet<CR>
-autocmd BufWritePost *.rs :Dispatch cargo build
+" nnoremap <leader>b :Cargo run --quiet<CR>
+nnoremap <leader>b :Dispatch cargo build<CR>
+" autocmd BufWritePost *.rs :Dispatch cargo check
 
 set splitbelow splitright
 
@@ -248,3 +249,9 @@ lua require'colorizer'.setup()
 " ResT compatible tables
 let g:table_mode_corner_corner='+'
 let g:table_mode_header_fillchar='='
+
+" Custom Comment Colour
+hi Comment guifg=#f5f542
+
+" Disable auto commenting
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
