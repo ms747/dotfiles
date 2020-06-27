@@ -9,7 +9,7 @@ nm-applet &
 sxhkd &
 
 compton &
-bspswallow &
+# bspswallow &
 
 /home/ms/swapkeys.sh
 /home/ms/mouse.sh
