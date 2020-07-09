@@ -19,7 +19,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+space exec --no-startup-id rofi -show run
 
 # change focus
 bindsym $mod+h focus left
@@ -65,10 +65,13 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+d focus mode_toggle
 
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
+
+# tab workspaces
+bindsym $mod+Tab workspace next
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -163,6 +166,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
+bindsym Ctrl+Mod1+l exec i3lock
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -215,7 +220,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-# exec_always --no-startup-id /$HOME/.config/polybar/i3wmthemer_bar_launch.sh
+exec_always --no-startup-id /$HOME/.config/polybar/launch.sh
 exec_always --no-startup-id polybar i3wmthemer_bar
 exec --no-startup-id /home/ms/swapkeys.sh
 
@@ -227,7 +232,7 @@ exec --no-startup-id /home/ms/swapkeys.sh
 # client.placeholder #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
 
 # client.background #1f1f1f
-client.focused          #8abeb7 #8abeb7 #ffffff #8abeb7   #8abeb7
+client.focused          #48007c #48007c #ffffff #48007c   #48007c
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -236,10 +241,10 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 # Gaps
-gaps inner 0
-gaps outer 0
+gaps inner 8
+gaps outer 2
 
-smart_gaps on
+# smart_gaps on
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
@@ -291,11 +296,11 @@ bindsym XF86TouchpadOn exec --no-startup-id synclient Touchpadoff=0
 bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1
 
 # Mayur Custom
-bindsym $mod+c exec /home/ms/.local/share/umake/web/firefox-dev/firefox
+bindsym $mod+c exec brave-browser
 exec --no-startup-id ~/mouse.sh
 
 # Remove all Words
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 1
 
 # Screenshot bindings
 bindsym Control+Print exec gnome-screenshot -i
