@@ -1,0 +1,7 @@
+---
+syntax : haskell
+tags : [ haskell ]
+---
+
+// Do IO Open
+openFile "filename.ext" ReadMode >>= (\handle -> hGetContents handle >>= (\string -> putStr string))
