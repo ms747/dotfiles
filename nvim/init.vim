@@ -29,7 +29,10 @@ Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-line'
 Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 " Plug '/home/ms/tank/Programming/vimsnitch'
+Plug 'alx741/vim-hindent'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 if has('nvim')
@@ -75,6 +78,17 @@ vnoremap <C-k> <Esc>
 tnoremap <C-k> <Esc>
 inoremap <C-k> <Esc>
 
+" h
+tnoremap <C-h> <Esc>
+vnoremap <C-h> <Esc>
+tnoremap <C-h> <Esc>
+inoremap <C-h> <Esc>
+
+" l
+tnoremap <C-l> <Esc>
+vnoremap <C-l> <Esc>
+tnoremap <C-l> <Esc>
+inoremap <C-l> <Esc>
 " No arrow keys
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -255,3 +269,6 @@ hi Comment guifg=#f5f542
 
 " Disable auto commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Haskell tab config
+set expandtab ts=4 sw=4 ai
