@@ -33,6 +33,7 @@ Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 " Plug '/home/ms/tank/Programming/vimsnitch'
 Plug 'alx741/vim-hindent'
 Plug 'tpope/vim-surround'
+Plug 'ziglang/zig.vim'
 call plug#end()
 
 if has('nvim')
@@ -272,3 +273,6 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Haskell tab config
 set expandtab ts=4 sw=4 ai
+
+" Zig
+let g:zig_fmt_autosave = 0
