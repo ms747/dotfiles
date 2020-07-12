@@ -300,7 +300,7 @@ bindsym $mod+c exec brave-browser
 exec --no-startup-id ~/mouse.sh
 
 # Remove all Words
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 
 # Screenshot bindings
 bindsym Control+Print exec gnome-screenshot -i
@@ -315,5 +315,3 @@ bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(d
 # sound tray
 exec /usr/bin/pasystray
 for_window [class="gimp"] floating enable
-
-for_window [class="Emacs"] border none
