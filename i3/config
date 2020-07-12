@@ -231,7 +231,8 @@ exec --no-startup-id /home/ms/swapkeys.sh
 # client.placeholder #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
 
 # client.background #1f1f1f
-client.focused          #48007c #48007c #ffffff #48007c   #48007c
+# #991f2c
+client.focused          #991f2c #991f2c #ffffff #991f2c   #991f2c
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -314,3 +315,5 @@ bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(d
 # sound tray
 exec /usr/bin/pasystray
 for_window [class="gimp"] floating enable
+
+for_window [class="Emacs"] border none
