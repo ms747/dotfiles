@@ -50,3 +50,4 @@
 ;(unpin! t)
 
 (package! rust-mode)
+(package! evil-multiedit)
