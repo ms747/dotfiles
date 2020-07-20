@@ -10,5 +10,10 @@
  '(package-selected-packages (quote (evil-multiedit lsp-mode rust-mode))))
 (custom-set-faces
  )
+;; Multicursor
 (require 'evil-multiedit)
 (evil-multiedit-default-keybinds)
+;; (after! rustic
+;;   (setq rustic-format-on-save t)
+;;   (setq rustic-lsp-server 'rust-analyzer))
+(setq lsp-rust-analyzer-server-command '("~/.local/bin/rust-analyzer"))
