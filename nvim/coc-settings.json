@@ -1,5 +1,6 @@
 {
   "rust-analyzer.cargo-watch.enable": false,
   "rust-analyzer.serverPath": "/home/ms/.cargo-target/release/rust-analyzer",
-  "coc.preferences.formatOnSaveFiletypes": ["javascript","css", "markdown"]
+  "coc.preferences.formatOnSaveFiletypes": ["javascript","css", "markdown"],
+  "diagnostic.warningSign": "w",
 }
