@@ -51,3 +51,4 @@
 
 (package! rust-mode)
 (package! evil-multiedit)
+(package! vimrc-mode)

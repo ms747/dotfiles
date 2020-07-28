@@ -7,8 +7,16 @@
 (setq display-line-numbers-type t)
 (load! "bindings")
 (custom-set-variables
- '(package-selected-packages (quote (evil-multiedit lsp-mode rust-mode))))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (vimrc-mode evil-multiedit lsp-mode rust-mode))))
 (custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
 ;; Multicursor
 (require 'evil-multiedit)
@@ -17,3 +25,4 @@
 ;;   (setq rustic-format-on-save t)
 ;;   (setq rustic-lsp-server 'rust-analyzer))
 (setq lsp-rust-analyzer-server-command '("~/.local/bin/rust-analyzer"))
+(require 'vimrc-mode)
