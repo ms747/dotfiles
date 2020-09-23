@@ -13,7 +13,7 @@ font xft:URWGothic-Book 11
 
 floating_modifier $mod
 
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # Window kill command
 bindsym $mod+Shift+q kill
@@ -215,7 +215,7 @@ mode "resize" {
 # Autostart applications
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
-# exec --no-startup-id xfce4-power-manager
+exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec_always --no-startup-id ff-theme-util
@@ -296,7 +296,7 @@ bindsym XF86TouchpadOn exec --no-startup-id synclient Touchpadoff=0
 bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1
 
 # Mayur Custom
-bindsym $mod+c exec firefox
+bindsym $mod+c exec --no-startup-id firefox
 exec --no-startup-id ~/mouse.sh
 
 # Remove all Words
@@ -313,5 +313,5 @@ bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow)
 bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).png"
 
 # sound tray
-exec /usr/bin/pasystray
+exec --no-startup-id /usr/bin/pasystray
 for_window [class="gimp"] floating enable

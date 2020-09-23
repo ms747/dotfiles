@@ -31,8 +31,6 @@ Plug 'alx741/vim-hindent'
 Plug 'tpope/vim-surround'
 Plug 'ziglang/zig.vim'
 " Plug 'voldikss/vim-floaterm'
-Plug 'tpope/vim-abolish'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 if has('nvim')
@@ -292,6 +290,3 @@ nnoremap \ :Rg<SPACE>
 let g:fzf_layout = { 'window'  : { 'width' : 0.9, 'height' : 0.9}}
 
 nmap <leader>r :%s/
-
-" Open File Manager
-nmap <leader>o :Explore<CR>

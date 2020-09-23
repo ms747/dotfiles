@@ -10,5 +10,4 @@
 #    set_color normal
 #end
 function fish_greeting
-	task ls
 end

@@ -106,6 +106,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
+    # family: Cascadia Mono
     family: FuraCode Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
@@ -535,8 +536,14 @@ background_opacity: 0.95
 # at once.
 key_bindings:
   # (Windows, Linux, and BSD only)
-  - { key: V,        mods: Control|Shift, action: Paste            }
-  - { key: C,        mods: Control|Shift, action: Copy             }
+    - { key: V,        mods: Control|Shift, action: Paste            }
+    - { key: C,        mods: Control|Shift, action: Copy             }
+    - { key: Space,    mods: Control,       action: ToggleViMode     }
+    - { key: K,    mods: Control,       action: ClearSelection     }
+    - { key: A,    mods: Control, mode: Vi,       action: First     }
+    - { key: E,    mods: Control, mode: Vi,       action: Last     }
+    - { key: 26, mods: Shift, mode: Vi,           action: ScrollPageUp     }
+    - { key: 27, mods: Shift, mode: Vi,           action: ScrollPageDown     }
   #- { key: Insert,   mods: Shift,         action: PasteSelection   }
   #- { key: Key0,     mods: Control,       action: ResetFontSize    }
   #- { key: Equals,   mods: Control,       action: IncreaseFontSize }

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-xinput --set-prop 9 "libinput Accel Speed" -0.9
+xinput --set-prop 12 "libinput Accel Speed" -0.9
