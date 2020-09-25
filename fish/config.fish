@@ -16,6 +16,7 @@ alias ac "nvim ~/.config/alacritty/alacritty.yml"
 alias g "lazygit"
 alias pc "nvim ~/.config/polybar/config.ini"
 alias t "tmux -u"
+alias tc "nvim ~/myscripts/.tmux.conf"
 set -U fish_greeting ""
 set -x EDITIOR nvim
 set --erase fish_greeting
