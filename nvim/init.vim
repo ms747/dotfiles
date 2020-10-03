@@ -56,6 +56,7 @@ hi Normal ctermbg=NONE
 
 " My Stuff
 set nu
+set cmdheight=1
 set ignorecase
 set smartcase
 set relativenumber
