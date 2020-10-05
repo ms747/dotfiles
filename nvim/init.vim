@@ -309,3 +309,5 @@ nmap <leader>o :Explore<CR>
 " Custom file finder
 command! -bang Locate call fzf#run(fzf#wrap({'source': 'fd --type f --hidden --exclude .git --exclude target'}))
 
+" Fugitive
+nnoremap <leader>g :Gstatus<CR>
