@@ -130,6 +130,14 @@ function! s:show_documentation()
   endif
 endfunction
 
+" LSP Config
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
 " Use wide tabs
 set shiftwidth=2
 set softtabstop=2
@@ -199,7 +207,7 @@ nnoremap j gj
 nnoremap k gk
 
 " Open hotkeys
-map <C-p> :Files<CR>
+map <C-p> :Locate<CR>
 nmap <leader>; :Buffers<CR>
 
 " Left and right can switch buffers
@@ -289,7 +297,7 @@ nmap <C-a> 0
 nmap <C-e> $
 
 " Project Search
-nnoremap \ :Rg<SPACE>
+nnoremap \ :Rg!<CR>
 
 let g:fzf_layout = { 'window'  : { 'width' : 0.9, 'height' : 0.9}}
 
@@ -298,5 +306,6 @@ nmap <leader>r :%s/
 " Open File Manager
 nmap <leader>o :Explore<CR>
 
-" Ignore files
+" Custom file finder
+command! -bang Locate call fzf#run(fzf#wrap({'source': 'fd --type f --hidden --exclude .git --exclude target'}))
 
