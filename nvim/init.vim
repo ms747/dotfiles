@@ -52,7 +52,8 @@ endif
 " Colors
 set background=dark
 colorscheme base16-gruvbox-dark-hard
-hi Normal ctermbg=NONE
+au ColorScheme * hi Normal ctermbg=none guibg=none
+au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
 " My Stuff
 set nu
@@ -198,7 +199,7 @@ nnoremap j gj
 nnoremap k gk
 
 " Open hotkeys
-map <C-p> :GFiles<CR>
+map <C-p> :Files<CR>
 nmap <leader>; :Buffers<CR>
 
 " Left and right can switch buffers
@@ -296,3 +297,6 @@ nmap <leader>r :%s/
 
 " Open File Manager
 nmap <leader>o :Explore<CR>
+
+" Ignore files
+
