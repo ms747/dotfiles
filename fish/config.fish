@@ -20,4 +20,3 @@ alias tc "nvim ~/myscripts/.tmux.conf"
 set -U fish_greeting ""
 set -x EDITIOR nvim
 set --erase fish_greeting
-set -g -x FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
