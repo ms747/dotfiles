@@ -31,6 +31,8 @@ Plug 'alx741/vim-hindent'
 Plug 'tpope/vim-surround'
 Plug 'ziglang/zig.vim'
 " Plug 'voldikss/vim-floaterm'
+Plug 'tpope/vim-abolish'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 if has('nvim')
@@ -50,10 +52,12 @@ endif
 " Colors
 set background=dark
 colorscheme base16-gruvbox-dark-hard
-hi Normal ctermbg=NONE
+au ColorScheme * hi Normal ctermbg=none guibg=none
+au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
 " My Stuff
 set nu
+set cmdheight=1
 set ignorecase
 set smartcase
 set relativenumber
@@ -126,6 +130,14 @@ function! s:show_documentation()
   endif
 endfunction
 
+" LSP Config
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
 " Use wide tabs
 set shiftwidth=2
 set softtabstop=2
@@ -195,7 +207,7 @@ nnoremap j gj
 nnoremap k gk
 
 " Open hotkeys
-map <C-p> :GFiles<CR>
+map <C-p> :Locate<CR>
 nmap <leader>; :Buffers<CR>
 
 " Left and right can switch buffers
@@ -285,8 +297,17 @@ nmap <C-a> 0
 nmap <C-e> $
 
 " Project Search
-nnoremap \ :Rg<SPACE>
+nnoremap <leader>\ :Rg!<CR>
 
 let g:fzf_layout = { 'window'  : { 'width' : 0.9, 'height' : 0.9}}
 
 nmap <leader>r :%s/
+
+" Open File Manager
+nmap <leader>o :Explore<CR>
+
+" Custom file finder
+command! -bang Locate call fzf#run(fzf#wrap({'source': 'fd --type f --hidden --exclude .git --exclude target'}))
+
+" Fugitive
+nnoremap <leader>g :Gstatus<CR>

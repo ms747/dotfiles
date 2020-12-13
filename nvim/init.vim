@@ -33,6 +33,11 @@ Plug 'ziglang/zig.vim'
 " Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-abolish'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+Plug 'nvim-lua/completion-nvim'
+Plug 'rhysd/vim-llvm'
+Plug 'nvim-lua/diagnostic-nvim'
+Plug 'udalov/kotlin-vim'
 call plug#end()
 
 if has('nvim')
@@ -52,7 +57,7 @@ endif
 " Colors
 set background=dark
 colorscheme base16-gruvbox-dark-hard
-au ColorScheme * hi Normal ctermbg=none guibg=none
+au ColorScheme * hi Normal ctermbg=black
 au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
 " My Stuff
@@ -297,7 +302,7 @@ nmap <C-a> 0
 nmap <C-e> $
 
 " Project Search
-nnoremap \ :Rg!<CR>
+nnoremap <leader>\ :Rg!<CR>
 
 let g:fzf_layout = { 'window'  : { 'width' : 0.9, 'height' : 0.9}}
 
@@ -311,3 +316,6 @@ command! -bang Locate call fzf#run(fzf#wrap({'source': 'fd --type f --hidden --e
 
 " Fugitive
 nnoremap <leader>g :Gstatus<CR>
+
+" Terminal
+tnoremap <C-j> <C-\><C-n>

@@ -2,7 +2,10 @@
   "rust-analyzer.cargo-watch.enable": false,
   "rust-analyzer.serverPath":"",
   "coc.preferences.formatOnSaveFiletypes": ["javascript","css", "markdown"],
-  //"diagnostic.warningSign": "w",
   "rust-analyzer.updates.channel": "nightly",
-  "clangd.path": "/home/ms/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd"
+  "clangd.path": "/home/ms/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
+    "rust-analyzer.diagnostics.enable": true,
+    "rust-analyzer.inlayHints.chainingHints": true,
+    "rust-analyzer.inlayHints.typeHints": true,
+    "rust-analyzer.inlayHints.parameterHints": true
 }
