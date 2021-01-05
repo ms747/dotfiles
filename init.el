@@ -104,8 +104,7 @@
   :config
   (evil-collection-init))
 
-(use-package magit
-  )
+(use-package magit)
 
 (use-package general
   :config
