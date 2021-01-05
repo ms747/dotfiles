@@ -124,3 +124,4 @@
 
   (git/leader-keys
     "g"  '(magit-status :which-key "Git client")))
+
