@@ -123,8 +123,7 @@
 
   (files/leader-keys
     "o"  '(dired :which-key "File Manager")
-    "f"  '(find-file :which "Open File")
-    )
+    "f"  '(find-file :which "Open File"))
 
   (git/leader-keys
     "g"  '(magit-status :which-key "Git client")))
