@@ -38,6 +38,12 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'rhysd/vim-llvm'
 Plug 'nvim-lua/diagnostic-nvim'
 Plug 'udalov/kotlin-vim'
+Plug 'alaviss/nim.nvim'
+Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'keith/swift.vim'
+Plug 'ocaml/vim-ocaml'
+Plug 'puremourning/vimspector'
 call plug#end()
 
 if has('nvim')
@@ -319,3 +325,6 @@ nnoremap <leader>g :Gstatus<CR>
 
 " Terminal
 tnoremap <C-j> <C-\><C-n>
+
+" Run Python
+nmap <F5> <Esc>:w<CR>:!python3 %<CR>

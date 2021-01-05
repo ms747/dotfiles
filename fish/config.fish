@@ -1,6 +1,7 @@
 set -e fish_user_paths
 export ANDROID_HOME=/tank0/Projects/Android/Sdk
 set -U fish_user_paths /opt/ghc/bin $fish_user_paths
+set -U fish_user_paths /home/ms/.opam/default/bin $fish_user_paths
 #export PATH={$PATH}:/tank0/Projects/Android/Sdk/platform-tools
 alias l "exa -alh"
 alias v "nvim"
