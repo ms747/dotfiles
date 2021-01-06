@@ -101,6 +101,7 @@
   (define-key evil-normal-state-map (kbd "C-w C-q") 'evil-quit)
   (define-key evil-normal-state-map (kbd "M-j") 'drag-stuff-down)
   (define-key evil-normal-state-map (kbd "M-k") 'drag-stuff-up)
+  (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
   (evil-global-set-key 'motion "j" 'evil-next-visual-line)
   (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
   (evil-set-initial-state 'messages-buffer-mode 'normal)
@@ -115,6 +116,10 @@
 
 (use-package rust-mode)
 
+(use-package all-the-icons)
+
+(use-package projectile) 
+
 (use-package general
   :config
   (general-create-definer git/leader-keys
@@ -124,3 +129,17 @@
 
   (git/leader-keys
     "g"  '(magit-status :which-key "Git client")))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(projectile which-key use-package rust-mode magit ivy-rich general evil-collection drag-stuff doom-themes doom-modeline counsel command-log-mode autothemer)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
