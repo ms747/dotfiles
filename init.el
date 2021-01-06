@@ -122,14 +122,5 @@
     :prefix "SPC"
     :global-prefix "C-SPC")
 
-  (general-create-definer files/leader-keys
-    :keymaps '(normal insert visual emacs)
-    :prefix "SPC"
-    :global-prefix "C-SPC")
-
-  (files/leader-keys
-    "o"  '(dired :which-key "File Manager")
-    "f"  '(find-file :which "Open File"))
-
   (git/leader-keys
     "g"  '(magit-status :which-key "Git client")))
