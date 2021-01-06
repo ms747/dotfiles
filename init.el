@@ -101,7 +101,7 @@
   (define-key evil-normal-state-map (kbd "C-w C-q") 'evil-quit)
   (define-key evil-normal-state-map (kbd "M-j") 'drag-stuff-down)
   (define-key evil-normal-state-map (kbd "M-k") 'drag-stuff-up)
-  (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
+  (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file-other-window)
   (evil-global-set-key 'motion "j" 'evil-next-visual-line)
   (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
   (evil-set-initial-state 'messages-buffer-mode 'normal)
