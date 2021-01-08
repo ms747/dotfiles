@@ -10,7 +10,7 @@
 
 (set-face-attribute 'default nil :font "Ubuntu Mono" :height 160)
 
-(load-theme 'doom-gruvbox t)
+(load-theme 'doom-palenight t)
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
@@ -32,6 +32,27 @@
 
 (column-number-mode)
 (global-display-line-numbers-mode t)
+
+(defun dw/org-mode-setup ()
+  (org-indent-mode)
+  (auto-fill-mode 0)
+  (visual-line-mode 1)
+  (setq evil-auto-indent nil))
+
+(use-package org
+  :defer t
+  :hook (org-mode . dw/org-mode-setup)
+  :config
+  (setq org-ellipsis " ▾"))
+
+(use-package org-superstar
+  :hook (org-mode . org-superstar-mode)
+    :custom
+    (org-superstar-remove-leading-stars t)
+    (org-superstar-headline-bullets-list '("◉" "○" "●" "○" "●" "○" "●")))
+
+(dolist (mode '(org-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 (use-package command-log-mode)
 
@@ -86,6 +107,8 @@
   :config
   (drag-stuff-global-mode 1))
 
+(use-package evil-nerd-commenter)
+
 (use-package evil
   :init
   (setq evil-want-integration t)
@@ -112,6 +135,13 @@
   :config
   (evil-collection-init))
 
+(use-package evil-leader
+  :config
+  (evil-leader/set-key
+    "c" 'evilnc-comment-or-uncomment-lines
+    "e" 'eval-buffer)
+  (global-evil-leader-mode))
+
 (use-package magit)
 
 (use-package rust-mode)
@@ -119,6 +149,11 @@
 (use-package all-the-icons)
 
 (use-package projectile) 
+
+(use-package paren
+  :config
+  (set-face-attribute 'show-paren-match-expression nil :background "#363e4a")
+  (show-paren-mode 1))
 
 (use-package general
   :config
@@ -130,16 +165,16 @@
   (git/leader-keys
     "g"  '(magit-status :which-key "Git client")))
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(projectile which-key use-package rust-mode magit ivy-rich general evil-collection drag-stuff doom-themes doom-modeline counsel command-log-mode autothemer)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(defun dw/org-mode-visual-fill ()
+  (setq visual-fill-column-width 100 
+        visual-fill-column-center-text t)
+  (visual-fill-column-mode 1))
+
+(use-package visual-fill-column
+  :defer t
+  :hook (org-mode . dw/org-mode-visual-fill))
+
+(require 'org-tempo)
+(add-to-list 'org-structure-template-alist '("sh" . "src sh"))
+(add-to-list 'org-structure-template-alist '("py" . "src python"))
+(add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
