@@ -124,7 +124,7 @@
   (define-key evil-normal-state-map (kbd "C-w C-q") 'evil-quit)
   (define-key evil-normal-state-map (kbd "M-j") 'drag-stuff-down)
   (define-key evil-normal-state-map (kbd "M-k") 'drag-stuff-up)
-  (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file-other-window)
+  (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
   (evil-global-set-key 'motion "j" 'evil-next-visual-line)
   (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
   (evil-set-initial-state 'messages-buffer-mode 'normal)
@@ -157,13 +157,24 @@
 
 (use-package general
   :config
-  (general-create-definer git/leader-keys
-    :keymaps '(normal insert visual emacs)
-    :prefix "SPC"
-    :global-prefix "C-SPC")
 
-  (git/leader-keys
-    "g"  '(magit-status :which-key "Git client")))
+  (general-define-key
+   :states '(normal visual insert emacs)
+   :prefix "SPC"
+   :non-normal-prefix "C-SPC"
+
+   ;; Magit
+   "g" '(:ignore t :which-key "Git client")
+   "gg" 'magit-status
+
+   ;; Dired
+   "d" '(:ignore t :which-key "Dired")
+   "dd" 'dired-jump
+
+   ;; Applications
+   "a" '(:ignore t :which-key "Applications")
+   "ar" 'ranger
+   "ad" 'dired))
 
 (defun dw/org-mode-visual-fill ()
   (setq visual-fill-column-width 100 
@@ -178,3 +189,7 @@
 (add-to-list 'org-structure-template-alist '("sh" . "src sh"))
 (add-to-list 'org-structure-template-alist '("py" . "src python"))
 (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+
+(use-package go-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode)))
