@@ -167,9 +167,17 @@
    "g" '(:ignore t :which-key "Git client")
    "gg" 'magit-status
 
+   ;; Compilation
+   "c" '(:ignore t :which-key "Git client")
+   "cc" 'compile
+   "SPC" 'recompile
+
    ;; Dired
    "d" '(:ignore t :which-key "Dired")
    "dd" 'dired-jump
+
+   ;; Helm
+   "\\" 'helm-projectile-rg
 
    ;; Applications
    "a" '(:ignore t :which-key "Applications")
@@ -193,3 +201,5 @@
 (use-package go-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode)))
+
+(use-package helm-projectile)
