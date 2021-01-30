@@ -1,0 +1,29 @@
+snippet p "println!"
+println!("{}", ${0});
+endsnippet
+
+snippet pd "println! debug"
+println!("{:?}", ${0});
+endsnippet
+
+snippet ass "assert!"
+assert!(${0});
+endsnippet
+
+snippet pan "panic!"
+panic!(${0});
+endsnippet
+
+snippet d "derive"
+#[derive(${0})]
+endsnippet
+
+snippet dd "derive debug"
+#[derive(Debug)]
+endsnippet
+
+snippet main "main function"
+fn main() {
+	${0}
+}
+endsnippet
