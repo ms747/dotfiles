@@ -29,11 +29,9 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'alx741/vim-hindent'
 Plug 'tpope/vim-surround'
-Plug 'ziglang/zig.vim'
 " Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-abolish'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
 Plug 'nvim-lua/completion-nvim'
 Plug 'rhysd/vim-llvm'
 Plug 'nvim-lua/diagnostic-nvim'
@@ -44,10 +42,11 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'keith/swift.vim'
 Plug 'ocaml/vim-ocaml'
 Plug 'puremourning/vimspector'
+Plug 'godlygeek/tabular'
 call plug#end()
 
 if has('nvim')
-    set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+    set guicursor=n-v-c:block-Cursor/lCursor-blinkon0
     set inccommand=nosplit
     noremap <C-q> :confirm qall<CR>
 end
@@ -127,6 +126,19 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
+
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
+
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? coc#_select_confirm() :
+"       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+
+" let g:coc_snippet_next = '<tab>'
 
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <silent><expr> <c-.> coc#refresh()
@@ -227,20 +239,24 @@ nnoremap <right> :bn<CR>
 
 
 " Multi cursor
-let g:multi_cursor_use_default_mapping=0
+" let g:multi_cursor_use_default_mapping=0
+let g:VM_mouse_mappings = 1
+nmap   <C-LeftMouse>         <Plug>(VM-Mouse-Cursor)
+nmap   <C-RightMouse>        <Plug>(VM-Mouse-Word)
+nmap   <M-C-RightMouse>      <Plug>(VM-Mouse-Column)
 
 " Remove Trailing Spaces
 autocmd BufWritePre * %s/\s\+$//e
 
 " Default mapping
-let g:multi_cursor_start_word_key      = '<C-n>'
-let g:multi_cursor_select_all_word_key = '<A-n>'
-let g:multi_cursor_start_key           = 'g<C-n>'
-let g:multi_cursor_select_all_key      = 'g<A-n>'
-let g:multi_cursor_next_key            = '<C-n>'
-let g:multi_cursor_prev_key            = '<C-p>'
-let g:multi_cursor_skip_key            = '<C-x>'
-let g:multi_cursor_quit_key            = '<C-j>'
+" let g:multi_cursor_start_word_key      = '<C-n>'
+" let g:multi_cursor_select_all_word_key = '<A-n>'
+" let g:multi_cursor_start_key           = 'g<C-n>'
+" let g:multi_cursor_select_all_key      = 'g<A-n>'
+" let g:multi_cursor_next_key            = '<C-n>'
+" let g:multi_cursor_prev_key            = '<C-p>'
+" let g:multi_cursor_skip_key            = '<C-x>'
+" let g:multi_cursor_quit_key            = '<C-j>'
 
 " Move single line
 nmap <A-k> [e
@@ -300,9 +316,6 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Haskell tab config
 set expandtab ts=4 sw=4 ai
 
-" Zig
-let g:zig_fmt_autosave = 0
-
 " Home End
 nmap <C-a> 0
 nmap <C-e> $
@@ -328,3 +341,7 @@ tnoremap <C-j> <C-\><C-n>
 
 " Run Python
 nmap <F5> <Esc>:w<CR>:!python3 %<CR>
+
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+

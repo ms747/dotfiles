@@ -1,3 +1,4 @@
+(setq require-final-newline t)
 (setq inhibit-startup-message t)
 (setq make-backup-files nil)
 (setq auto-save-default nil)
@@ -5,15 +6,14 @@
 (tool-bar-mode -1)
 (tooltip-mode -1)
 (set-fringe-mode 10)
-
 (menu-bar-mode -1)
 
-(set-face-attribute 'default nil :font "Ubuntu Mono" :height 160)
+(set-face-attribute 'default nil :font "FuraCode Nerd Font Mono" :height 120)
 
 (load-theme 'doom-palenight t)
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-
+(global-set-key (kbd "M-TAB") 'completion-at-point)
 (require 'package)
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
@@ -130,6 +130,8 @@
   (evil-set-initial-state 'messages-buffer-mode 'normal)
   (evil-set-initial-state 'dashboard-mode 'normal))
 
+(electric-pair-mode 1)
+
 (use-package evil-collection
   :after evil
   :config
@@ -139,6 +141,7 @@
   :config
   (evil-leader/set-key
     "c" 'evilnc-comment-or-uncomment-lines
+    "q" 'evil-goto-error
     "e" 'eval-buffer)
   (global-evil-leader-mode))
 
@@ -148,7 +151,7 @@
 
 (use-package all-the-icons)
 
-(use-package projectile) 
+(use-package projectile)
 
 (use-package paren
   :config
@@ -185,7 +188,7 @@
    "ad" 'dired))
 
 (defun dw/org-mode-visual-fill ()
-  (setq visual-fill-column-width 100 
+  (setq visual-fill-column-width 100
         visual-fill-column-center-text t)
   (visual-fill-column-mode 1))
 
@@ -203,3 +206,29 @@
   (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode)))
 
 (use-package helm-projectile)
+;; Align with spaces only
+(defadvice align-regexp (around align-regexp-with-spaces)
+  "Never use tabs for alignment."
+  (let ((indent-tabs-mode nil))
+    ad-do-it))
+(ad-activate 'align-regexp)
+
+;; (use-package evil-smartparens)
+(use-package auto-complete
+  :config
+  (global-auto-complete-mode))
+
+(use-package evil-mc
+  :config
+  (global-evil-mc-mode 1))
+
+(global-set-key [f2]
+  '(lambda () (interactive)
+      (condition-case nil (next-error)
+         (error (next-error 1 t)))))
+
+(add-hook 'rust-mode-hook 'cargo-minor-mode)
+
+(use-package yasnippet
+  :config
+  (yas-global-mode 1))
