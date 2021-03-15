@@ -1,4 +1,13 @@
-(setq require-final-newline t)
+;;      _____                           _____              __ _       
+;;     |  ___|                         /  __ \            / _(_)      
+;;     | |__ _ __ ___   __ _  ___ ___  | /  \/ ___  _ __ | |_ _  __ _ 
+;;     |  __| '_ ` _ \ / _` |/ __/ __| | |    / _ \| '_ \|  _| |/ _` |
+;;     | |__| | | | | | (_| | (__\__ \ | \__/\ (_) | | | | | | | (_| |
+;;     \____/_| |_| |_|\__,_|\___|___/  \____/\___/|_| |_|_| |_|\__, |
+;;                                                               __/ |
+;;                                                              |___/ 
+
+(setq require-final-newline nil)
 (setq inhibit-startup-message t)
 (setq make-backup-files nil)
 (setq auto-save-default nil)
@@ -148,6 +157,24 @@
 (use-package magit)
 
 (use-package rust-mode)
+;; (use-package lsp-mode
+;;   :ensure
+;;   :commands lsp
+;;   :custom
+;;   (lsp-rust-analyzer-cargo-watch-command "clippy")
+;;   (lsp-eldoc-render-all t)
+;;   (lsp-idle-delay 0.6))
+
+;; (use-package company
+;;   :ensure
+;;   :custom
+;;   (company-idle-delay 0.5))
+
+;; (use-package flycheck :ensure)
+
+;; (use-package rustic
+;;   :config
+;;   (setq rustic-format-on-save t))
 
 (use-package all-the-icons)
 

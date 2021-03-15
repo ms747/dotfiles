@@ -21,32 +21,32 @@ Plug 'tpope/vim-commentary'
 Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-expand-region'
-Plug 'neovimhaskell/haskell-vim'
+" Plug 'neovimhaskell/haskell-vim'
 Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-line'
-Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
+" Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'dhruvasagar/vim-table-mode'
-Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
+" Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'alx741/vim-hindent'
 Plug 'tpope/vim-surround'
 " Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-abolish'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'nvim-lua/completion-nvim'
-Plug 'rhysd/vim-llvm'
-Plug 'nvim-lua/diagnostic-nvim'
-Plug 'udalov/kotlin-vim'
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'nvim-lua/completion-nvim'
+" Plug 'rhysd/vim-llvm'
+" Plug 'nvim-lua/diagnostic-nvim'
+" Plug 'udalov/kotlin-vim'
 Plug 'alaviss/nim.nvim'
-Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'keith/swift.vim'
-Plug 'ocaml/vim-ocaml'
-Plug 'puremourning/vimspector'
+" Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
+" Plug 'dart-lang/dart-vim-plugin'
+" Plug 'keith/swift.vim'
+" Plug 'ocaml/vim-ocaml'
+" Plug 'puremourning/vimspector'
 Plug 'godlygeek/tabular'
 call plug#end()
 
 if has('nvim')
-    set guicursor=n-v-c:block-Cursor/lCursor-blinkon0
+    " set guicursor=n-v-c:block-Cursor/lCursor-blinkon0
     set inccommand=nosplit
     noremap <C-q> :confirm qall<CR>
 end

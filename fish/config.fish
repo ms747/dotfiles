@@ -1,7 +1,9 @@
 set -e fish_user_paths
-export ANDROID_HOME=/tank0/Projects/Android/Sdk
-set -U fish_user_paths /opt/ghc/bin $fish_user_paths
-set -U fish_user_paths /home/ms/.opam/default/bin $fish_user_paths
+# export ANDROID_HOME=/tank0/Projects/Android/Sdk
+set -U fish_user_paths /home/ms/.cargo/bin
+set -U fish_user_paths /home/ms/tank/Projects/golang/go1.15.2/bin/
+set -U fish_user_paths /home/ms/.local/bin
+# set -U fish_user_paths /home/ms/.opam/default/bin $fish_user_paths
 #export PATH={$PATH}:/tank0/Projects/Android/Sdk/platform-tools
 alias l "exa -alh"
 alias v "nvim"
@@ -21,12 +23,13 @@ alias t "bash ~/myscripts/ide.sh"
 alias tk "tmux kill-session -t work"
 alias tc "nvim ~/myscripts/.tmux.conf"
 alias up "apt update; apt upgrade -y; rustup update"
+alias serve "python3 -m http.server"
 set -U fish_greeting ""
 set -x EDITIOR nvim
 set --erase fish_greeting
 if test -f /home/ms/.autojump/share/autojump/autojump.fish; . /home/ms/.autojump/share/autojump/autojump.fish; end
 
 # OPAM configuration
-source /home/ms/.opam/opam-init/init.fish > /dev/null 2> /dev/null or true
+# source /home/ms/.opam/opam-init/init.fish > /dev/null 2> /dev/null or true
 # Set Starfish
 # starship init fish | source
