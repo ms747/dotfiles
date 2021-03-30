@@ -3,12 +3,14 @@ set -e fish_user_paths
 set -U fish_user_paths /home/ms/.cargo/bin
 set -U fish_user_paths /home/ms/tank/Projects/golang/go1.15.2/bin/
 set -U fish_user_paths /home/ms/.local/bin
+set -U fish_user_paths /home/ms/.deno/bin
 # set -U fish_user_paths /home/ms/.opam/default/bin $fish_user_paths
 #export PATH={$PATH}:/tank0/Projects/Android/Sdk/platform-tools
 alias l "exa -alh"
 alias v "nvim"
 alias d "cd ~/tank/Downloads"
 alias p "cd ~/tank/Projects"
+alias pp "python3"
 alias pr "cd ~/tank/Programming"
 alias vc "nvim ~/.config/nvim/init.vim"
 alias ic "nvim ~/.config/i3/config"
