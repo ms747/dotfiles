@@ -42,7 +42,8 @@ Plug 'alaviss/nim.nvim'
 " Plug 'keith/swift.vim'
 " Plug 'ocaml/vim-ocaml'
 " Plug 'puremourning/vimspector'
-Plug 'godlygeek/tabular'
+" Plug 'godlygeek/tabular'
+Plug 'junegunn/vim-easy-align'
 call plug#end()
 
 if has('nvim')
@@ -345,3 +346,7 @@ nmap <F5> <Esc>:w<CR>:!python3 %<CR>
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
 
+" Easy Align
+xmap ga <Plug>(EasyAlign)
+
+nmap ga <Plug>(EasyAlign)
