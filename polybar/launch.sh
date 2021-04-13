@@ -10,4 +10,4 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar
 # polybar example -c ~/.config/polybar/config.ini
-/home/ms/tank/Projects/polybar-3.5.0/build/bin/polybar example -c ~/.config/polybar/config.ini
+polybar example -c ~/.config/polybar/config.ini
