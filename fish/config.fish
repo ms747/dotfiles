@@ -1,9 +1,9 @@
 set -e fish_user_paths
 # export ANDROID_HOME=/tank0/Projects/Android/Sdk
-set -U fish_user_paths /home/ms/.cargo/bin
-set -U fish_user_paths /home/ms/tank/Projects/golang/go1.15.2/bin/
-set -U fish_user_paths /home/ms/.local/bin
-set -U fish_user_paths /home/ms/.deno/bin
+set -U fish_user_paths /home/ms/.cargo/bin $fish_user_paths
+set -U fish_user_paths /home/ms/tank/Projects/golang/go/bin $fish_user_paths
+set -U fish_user_paths /home/ms/.local/bin $fish_user_paths
+set -U fish_user_paths /home/ms/.deno/bin $fish_user_paths
 # set -U fish_user_paths /home/ms/.opam/default/bin $fish_user_paths
 #export PATH={$PATH}:/tank0/Projects/Android/Sdk/platform-tools
 alias l "exa -alh"
