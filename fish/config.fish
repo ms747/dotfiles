@@ -4,8 +4,11 @@ set -U fish_user_paths /home/ms/.cargo/bin $fish_user_paths
 set -U fish_user_paths /home/ms/tank/Projects/golang/go/bin $fish_user_paths
 set -U fish_user_paths /home/ms/.local/bin $fish_user_paths
 set -U fish_user_paths /home/ms/.deno/bin $fish_user_paths
+set -U fish_user_paths /home/ms/tank/Projects/qemu-6.0.0/build $fish_user_paths
 # set -U fish_user_paths /home/ms/.opam/default/bin $fish_user_paths
 #export PATH={$PATH}:/tank0/Projects/Android/Sdk/platform-tools
+alias s "please"
+alias sudoedit "pleaseedit"
 alias l "exa -alh"
 alias v "nvim"
 alias d "cd ~/tank/Downloads"
@@ -19,6 +22,7 @@ alias xc "nvim ~/.xmonad/xmonad.hs"
 alias bsc "nvim ~/.config/bspwm/bspwmrc"
 alias sxc "nvim ~/.config/sxhkd/sxhkdrc"
 alias ac "nvim ~/.config/alacritty/alacritty.yml"
+alias kc "nvim ~/.config/kitty/kitty.conf"
 alias g "lazygit"
 alias pc "nvim ~/.config/polybar/config.ini"
 alias t "bash ~/myscripts/ide.sh"
@@ -35,3 +39,7 @@ if test -f /home/ms/.autojump/share/autojump/autojump.fish; . /home/ms/.autojump
 # source /home/ms/.opam/opam-init/init.fish > /dev/null 2> /dev/null or true
 # Set Starfish
 # starship init fish | source
+
+set -gx WASMTIME_HOME "$HOME/.wasmtime"
+
+string match -r ".wasmtime" "$PATH" > /dev/null; or set -gx PATH "$WASMTIME_HOME/bin" $PATH

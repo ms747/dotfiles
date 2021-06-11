@@ -13,6 +13,7 @@ font xft:URWGothic-Book 11
 
 floating_modifier $mod
 
+# Terminal Emulator
 bindsym $mod+Return exec --no-startup-id alacritty
 
 # Window kill command
